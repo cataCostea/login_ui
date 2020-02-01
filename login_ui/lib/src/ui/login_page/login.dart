@@ -4,7 +4,6 @@ import 'package:login_ui/src/providers/login_provider.dart';
 import 'background.dart';
 import 'sign_in_widget.dart';
 import 'sign_up_widget.dart';
-import 'social_login_widget.dart';
 
 class Login extends StatefulWidget {
   Login({Key key}) : super(key: key);

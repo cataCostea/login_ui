@@ -24,7 +24,6 @@ class _SignInState extends State<SignInWidget> {
 
   @override
   void initState() {
-    print('sign in');
     emailFocusNode = FocusNode();
     passwordFocusNode = FocusNode();
     super.initState();
@@ -35,7 +34,6 @@ class _SignInState extends State<SignInWidget> {
     loginProvider = Provider.of<LoginProvider>(context);
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
-    print(screenHeight);
     super.didChangeDependencies();
   }
 
@@ -62,10 +60,14 @@ class _SignInState extends State<SignInWidget> {
           Container(
             padding: EdgeInsets.only(left: 20.0, top: 40.0, right: 20.0),
             width: screenWidth,
+            height: screenHeight * 0.75,
             child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Container(
                   alignment: Alignment.center,
+                  margin: EdgeInsets.only(top: 20.0),
                   child: Text(
                     "LOGO",
                     style: TextStyle(fontSize: 40.0),
@@ -154,7 +156,7 @@ class _SignInState extends State<SignInWidget> {
 
   Widget _loginButton() {
     return Container(
-      margin: EdgeInsets.only(top: 30.0),
+      margin: EdgeInsets.only(bottom: 30.0),
       alignment: Alignment.centerRight,
       child: GestureDetector(
         child: Container(
@@ -186,8 +188,7 @@ class _SignInState extends State<SignInWidget> {
   Widget _switchButton() {
     return Container(
       alignment: Alignment.bottomRight,
-      transform: Matrix4.translationValues(15.0, 0, 0),
-      height: (screenHeight * 0.75) / 4.5,
+      transform: Matrix4.translationValues(15.0, -30.0, 0),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(

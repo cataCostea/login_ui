@@ -51,7 +51,8 @@ class _SignUpState extends State<SignUpWidget> {
 
   Widget build(BuildContext context) {
     return Container(
-      transform: Matrix4.translationValues(0, -80, 0),
+      transform:
+          Matrix4.translationValues(0, screenHeight <= 736.0 ? -80 : -100, 0),
       color: Colors.transparent,
       padding: EdgeInsets.only(left: 15.0, right: 15.0),
       child: Stack(
@@ -67,8 +68,10 @@ class _SignUpState extends State<SignUpWidget> {
           Container(
             padding: EdgeInsets.only(left: 20.0, right: 20.0),
             width: screenWidth,
+            height: screenHeight * 0.75,
             child: Column(
-              //mainAxisSize: MainAxisSize.min,
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Stack(
                   children: <Widget>[
@@ -198,7 +201,7 @@ class _SignUpState extends State<SignUpWidget> {
 
   Widget _signUpButton() {
     return Container(
-      height: (screenHeight * 0.75) / 5,
+      margin: EdgeInsets.only(bottom: 20.0),
       alignment: Alignment.bottomRight,
       child: GestureDetector(
         child: Container(
